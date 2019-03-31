@@ -1,3 +1,7 @@
+# Copyright BigchainDB GmbH and BigchainDB contributors
+# SPDX-License-Identifier: (Apache-2.0 AND CC-BY-4.0)
+# Code is Apache-2.0 and docs are CC-BY-4.0
+
 ---
 - name: Install pymongo
   pip:
@@ -6,7 +10,7 @@
   tags: [bigchaindb]
 
 - name: Install BigchainDB
-  shell: "python3.6 -m pip install --no-cache-dir --process-dependency-links -e /opt/stack/bigchaindb/.[dev] --ignore-installed pyyaml"
+  shell: "python3.6 -m pip install -e /opt/stack/bigchaindb/.[dev] --ignore-installed pyyaml"
   register: install_bdb
   failed_when: "'FAILED' in install_bdb.stderr or install_bdb.rc != 0"
   tags: [bigchaindb]
@@ -36,6 +40,6 @@
     BIGCHAINDB_WSSERVER_HOST: 0.0.0.0
     BIGCHAINDB_WSSERVER_PORT: 9985
     BIGCHAINDB_TENDERMINT_HOST: 127.0.0.1
-    BIGCHAINDB_TENDERMINT_PORT: 46657
+    BIGCHAINDB_TENDERMINT_PORT: 26657
   when: mdb_pchk.stdout| int != 0 and bdb_pchk.stdout| int == 0 and tm_pchk.stdout| int != 0
   tags: [bigchaindb]

@@ -1,3 +1,7 @@
+# Copyright BigchainDB GmbH and BigchainDB contributors
+# SPDX-License-Identifier: (Apache-2.0 AND CC-BY-4.0)
+# Code is Apache-2.0 and docs are CC-BY-4.0
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -9,9 +13,9 @@ spec:
   ports:
 spec:
   ports:
-  - port: 46656
+  - port: 26656
     name: p2p
-  - port: 46657
+  - port: 26657
     name: pubkey
   - port: 9986
     name: nginx

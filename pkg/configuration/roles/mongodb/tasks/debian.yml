@@ -1,3 +1,7 @@
+# Copyright BigchainDB GmbH and BigchainDB contributors
+# SPDX-License-Identifier: (Apache-2.0 AND CC-BY-4.0)
+# Code is Apache-2.0 and docs are CC-BY-4.0
+
 ---
 - name: Removing apt cache lists
   file:
@@ -22,6 +26,15 @@
     repo: "{{ mongodb_apt_repo }}"
     state: present
     update_cache: no
+  when: distribution_name == "ubuntu"
+  tags: [mongodb]
+
+- name: Add MongoDB repo and update cache | deb
+  apt_repository:
+    repo: "{{ mongodb_deb_repo }}"
+    state: present
+    update_cache: no
+  when: distribution_name == "debian"
   tags: [mongodb]
 
 - name: Install MongoDB | apt

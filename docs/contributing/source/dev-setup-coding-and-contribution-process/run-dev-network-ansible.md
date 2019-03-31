@@ -1,3 +1,9 @@
+<!---
+Copyright BigchainDB GmbH and BigchainDB contributors
+SPDX-License-Identifier: (Apache-2.0 AND CC-BY-4.0)
+Code is Apache-2.0 and docs are CC-BY-4.0
+--->
+
 # Run a BigchainDB network with Ansible
 
 **NOT for Production Use**
@@ -114,7 +120,7 @@ OR
 bdb_root_url = http://<HOST-IP>:<DOCKER-PUBLISHED-PORT>
 ```
 
-**Note**: BigchainDB has [other drivers as well](../drivers-clients/index.html).
+**Note**: BigchainDB has [other drivers as well](http://docs.bigchaindb.com/projects/server/en/latest/drivers-clients/index.html).
 
 ### Experimental: Running Ansible a Remote Dev/Host
 #### Remote Setup
